@@ -13,6 +13,15 @@ class Board:
         print ('-----------')
         print (' ' + self.board[6] + ' | ' + self.board[7] + ' | ' + self.board[8])
         
+    # method to print out the board with numbers 1-9 for visual representation
+    def print_numbered_board(self):
+        print('\n')
+        print(' 1 | 2 | 3')
+        print('-----------')
+        print(' 4 | 5 | 6')
+        print('-----------')
+        print(' 7 | 8 | 9')
+        
     def update_board(self, position, type):
         # adding try...except to prevent players select position other than position-1 
         try:
@@ -75,12 +84,16 @@ class Game:
         # current_player attribute to identify the turn of either player
         self.current_player = self.player1
         
+        # showing the numbered board for visual representation
+        print ("\nHere is the layout of the board with numbered positions:")
+        self.board.print_numbered_board()
+        
     def play(self):
         # infinite loop to run the game
         while True:
             # adding try...except to remind players that only numbers 1-9 are valid input
             try:
-                message = f"{self.current_player.name}, enter your position (1-9): "
+                message = f"\n{self.current_player.name}, enter your position (1-9): "
                 position = int(input(message))
                 
                 # the update_board() method to return True if the user selected position is not filled yet
