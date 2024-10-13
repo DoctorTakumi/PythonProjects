@@ -105,6 +105,25 @@ class Game:
                             self.current_player = self.player1
             except:
                 print ("Invalid input! Enter a number between 1 and 9!")
-                    
-game = Game()
-game.play()
+                
+    # adding a possibility to start a new game
+    def play_again(self):
+        while True:
+            play_again = input ("Do you want to play another game? (y/n): ").lower()
+            if play_again == "y" or play_again == "yes":
+                print ("Great, let's go!")
+                return True
+            elif play_again == "n" or play_again == "no":
+                print ("Thank you for playing!")
+                return False
+            else:
+                print ("Invalid input! Please enter y/no or yes/no!")
+                
+def main():
+    while True:
+        game = Game()
+        game.play()
+        if not game.play_again():
+            break
+        
+main()
