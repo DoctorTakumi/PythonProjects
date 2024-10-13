@@ -80,6 +80,6 @@ def main():
 main()
 
 # idea to specify a fixed number of games played
-while True:
-    game = Game(5) # number of games
-    game.print_result()
+# while True:
+#     game = Game(5) # number of games
+#     game.print_result()
