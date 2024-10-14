@@ -1,3 +1,5 @@
+import math
+
 class Board:
     def __init__(self):
         self.board = [' ', ' ', ' ',
@@ -94,7 +96,7 @@ class Game:
             # adding try...except to remind players that only numbers 1-9 are valid input
             try:
                 message = f"\n{self.current_player.name}, enter your position (1-9): "
-                position = int(input(message))
+                position = abs(int(input(message)))  # convert the input to its absolute value (preventing user from inputting negative values)
                 
                 # the update_board() method to return True if the user selected position is not filled yet
                 if self.board.update_board(position, self.current_player.type):
